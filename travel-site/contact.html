@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - Projeto de Viagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
+    </nav>
+    <header class="page-hero">
+        <div>
+            <p class="tag">Fale com a gente</p>
+            <h1>Contato</h1>
+            <p>Quer receber recomendações personalizadas? Conte o que você procura e vamos te ajudar a montar o roteiro ideal.</p>
+        </div>
+        <img class="hero-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 520'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%239be15d'/><stop offset='1' stop-color='%2300e3ae'/></linearGradient></defs><rect width='720' height='520' fill='url(%23g)'/><text x='40' y='300' font-family='Arial' font-size='44' fill='%2300342f'>Planeje%20Agora</text></svg>" alt="Mesa com mapa e caderno de viagem">
+    </header>
+
+    <main>
+        <section class="section contact-grid">
+            <div class="contact-info">
+                <h2>Informações</h2>
+                <p class="section-lead">Respondemos em até 48 horas úteis com ideias de roteiros, custos médios e dicas práticas.</p>
+                <div class="info-card">
+                    <p><strong>Email:</strong> contato@projetoviagem.com</p>
+                    <p><strong>WhatsApp:</strong> (11) 98765-4321</p>
+                    <p><strong>Horário:</strong> Seg a Sex, 9h às 18h</p>
+                </div>
+                <img class="contact-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 340'><rect width='520' height='340' fill='%23d9e4f5'/><path d='M0 250 Q200 210 520 250 V340 H0 Z' fill='%23ffffff99'/><text x='32' y='210' font-family='Arial' font-size='34' fill='%23304463'>Mapa%20de%20Rota</text></svg>" alt="Mapa ilustrado de rota">
+            </div>
+            <form id="contact-form" class="form-card">
+                <label for="name">Seu nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Seu e-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="interest">Tipo de viagem:</label>
+                <select id="interest" name="interest" required>
+                    <option value="">Selecione</option>
+                    <option value="praias">Praias</option>
+                    <option value="cultura">Cultura e templos</option>
+                    <option value="cidades">Cidades e gastronomia</option>
+                    <option value="aventura">Aventura</option>
+                </select>
+                <label for="message-text">Mensagem:</label>
+                <textarea id="message-text" name="message-text" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+                <p id="message"></p>
+            </form>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
