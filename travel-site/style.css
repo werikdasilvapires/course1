@@ -222,3 +222,21 @@ form button {
     font-weight: 600;
     cursor: pointer;
 }
+
+/* busca */
+.search-section {
+    padding: 20px;
+    background: #eef;
+    text-align: center;
+}
+#search-input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.search-result {
+    margin-top: 10px;
+    font-weight: bold;
+}
