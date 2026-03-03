@@ -28,7 +28,26 @@ if (searchInput && searchResult) {
             searchResult.textContent = '';
             return;
         }
-        const matches = recommendations.filter(r => r.toLowerCase().includes(term));
+        let matches = recommendations.filter(r => r.toLowerCase().includes(term));
+        // garantir ao menos duas recomendações de templos
+        if (term.includes('templo')) {
+            const templeRecs = recommendations.filter(r => r.toLowerCase().includes('templo'));
+            if (templeRecs.length >= 2) {
+                // se a busca não trouxe pelo menos duas, forçamos
+                if (matches.length < 2) {
+                    matches = templeRecs.slice(0, 2);
+                }
+            }
+        }
+        // garantir ao menos duas recomendações de países
+        if (term.includes('pais')) {
+            const countryRecs = recommendations.filter(r => r.toLowerCase().includes('pais'));
+            if (countryRecs.length >= 2) {
+                if (matches.length < 2) {
+                    matches = countryRecs.slice(0, 2);
+                }
+            }
+        }
         if (matches.length > 0) {
             searchResult.textContent = `Recomendação: ${matches.join(', ')}`;
         } else {
