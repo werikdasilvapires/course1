@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-links">
             <li><a href="index.html">Início</a></li>
             <li><a href="about.html">Sobre Nós</a></li>
             <li><a href="contact.html">Contato</a></li>
         </ul>
-0,0    </nav>
+
+        <form class="nav-search" id="nav-search-form" role="search" onsubmit="event.preventDefault();">
+            <label for="nav-search-input" class="visually-hidden">Pesquisar recomendações</label>
+            <input type="search" id="nav-search-input" name="q" placeholder="Buscar recomendações...">
+            <button type="submit" id="nav-search-button" class="button">Search</button>
+            <button type="button" id="nav-clear-button" class="button secondary">Clear</button>
+        </form>
+    </nav>
     <header class="hero">
         <div class="hero-content">
             <p class="tag">Guia de viagem 2026</p>

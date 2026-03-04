@@ -21,6 +21,9 @@ const recommendations = [
 
 const searchInput = document.getElementById('search-input');
 const searchResult = document.getElementById('search-result');
+const navSearchInput = document.getElementById('nav-search-input');
+const navSearchButton = document.getElementById('nav-search-button');
+const navClearButton = document.getElementById('nav-clear-button');
 if (searchInput && searchResult) {
     searchInput.addEventListener('input', () => {
         const term = searchInput.value.trim().toLowerCase();
@@ -129,5 +132,27 @@ if (searchInput && searchResult) {
         }
 
         renderRecommendations(matches);
+    });
+}
+
+// conectar o campo de busca na nav ao mesmo comportamento
+if (navSearchInput && navSearchButton && navClearButton && searchInput) {
+    // sempre sincronizar o valor com o searchInput principal
+    navSearchInput.addEventListener('input', () => {
+        searchInput.value = navSearchInput.value;
+        // disparar evento input no searchInput para reutilizar a lógica
+        searchInput.dispatchEvent(new Event('input'));
+    });
+
+    navSearchButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        searchInput.value = navSearchInput.value;
+        searchInput.dispatchEvent(new Event('input'));
+    });
+
+    navClearButton.addEventListener('click', () => {
+        navSearchInput.value = '';
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
     });
 }

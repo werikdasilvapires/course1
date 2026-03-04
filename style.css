@@ -23,6 +23,27 @@ nav a {
     color: #fff;
     text-decoration: none;
 }
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.nav-search {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.nav-search input[type="search"] {
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
 main {
     padding: 20px;
 }
